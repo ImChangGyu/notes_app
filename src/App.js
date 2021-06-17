@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./components/header";
+import Notepage from "./pages/Notepage";
 
 function App() {
-    return <Header />;
+    return <Notepage />;
 }
 
 export default App;
