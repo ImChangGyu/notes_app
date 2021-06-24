@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as S from "./style";
 
 const Header = () => {
     return (
-        <>
-            <h1>Notes App</h1>
-            <S.DefaultBtn>Create Note</S.DefaultBtn>
-        </>
+        <S.Position>
+            <Link to="/">
+                <h1>Notes App</h1>
+            </Link>
+            <Link to="/create">
+                <S.DefaultBtn>Create Note</S.DefaultBtn>
+            </Link>
+        </S.Position>
     );
 };
 

@@ -1,8 +1,14 @@
 import React from "react";
-import Notepage from "./pages/Notepage";
+import { Route, BrowserRouter } from "react-router-dom";
+import { Createpage, Notepage } from "./pages";
 
 function App() {
-    return <Notepage />;
+    return (
+        <BrowserRouter>
+            <Route exact path="/" component={Notepage} />
+            <Route path="/create" component={Createpage} />
+        </BrowserRouter>
+    );
 }
 
 export default App;
