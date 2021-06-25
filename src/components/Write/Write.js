@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import * as S from "./style";
 
 const Write = () => {
@@ -11,9 +12,15 @@ const Write = () => {
         setNote(e.target.value);
     };
     const ClickHandler = (e) => {
-        let NoteStorageItem = JSON.parse(localStorage.getItem("Note") || []);
-        NoteStorageItem.push({ Title, Note });
-        localStorage.setItem("Note", JSON.stringify(NoteStorageItem));
+        let NoteStorageItem = localStorage.getItem("Note");
+        try {
+            NoteStorageItem = NoteStorageItem ? JSON.parse(NoteStorageItem) :  [];
+            NoteStorageItem.push({ Title, Note });
+            localStorage.setItem("Note", JSON.stringify(NoteStorageItem));
+        } catch (e) {
+            return [];
+        }
+        
     };
     return (
         <>
@@ -23,7 +30,9 @@ const Write = () => {
             />
             <S.MemoBox placeholder="내용을 작성해줘 ✏️" onChange={MemoChange} />
             <S.BtnContainer>
-                <S.DefaultBtn onClick={ClickHandler}>Create Note</S.DefaultBtn>
+                <Link to="/">
+                    <S.DefaultBtn onClick={ClickHandler}>Create Note</S.DefaultBtn>
+                </Link>
                 <S.RedBtn>Delete Note</S.RedBtn>
             </S.BtnContainer>
         </>
