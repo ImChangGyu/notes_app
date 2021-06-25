@@ -31,6 +31,9 @@ export const MemoBox = styled.textarea`
 export const BtnContainer = styled.div`
     display: flex;
     justify-content: end;
+    a {
+        text-decoration: none;
+    }
 `;
 export const DefaultBtn = styled.div`
     cursor: pointer;
