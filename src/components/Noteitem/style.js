@@ -18,10 +18,10 @@ export const Container = styled.div`
 export const Title = styled.span`
     font-size: 20px;
     font-weight: bold;
-    margin: 30px 0 5px 30px;
+    margin: 30px 30px 5px 30px;
 `;
 export const Memo = styled.span`
     font-size: 16px;
-    margin-left: 30px;
+    margin: 5px 30px 0 30px;
     word-break: break-all;
 `;
