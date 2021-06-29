@@ -3,6 +3,7 @@ import { Header, Noteitem } from "../../components/";
 import * as S from "./style";
 
 const Notepage = () => {
+    
     const getNote = () => {
         const notesJSON = localStorage.getItem("Note");
         try {
@@ -12,13 +13,14 @@ const Notepage = () => {
         }
     };
     let Notes = getNote();
+    
     return (
         <>
             <Header />
             <S.Position>
                 {React.Children.toArray(
                     Notes.map((data) => {
-                        return <Noteitem memo={data} />;
+                        return <Noteitem memo={data} Notes={Notes}/>;
                     })
                 )}
             </S.Position>

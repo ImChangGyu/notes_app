@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 import * as S from "./style";
 
 const Write = () => {
     const [Note, setNote] = useState([]);
     const [Title, setTitle] = useState([]);
+    let [id, setId] = useState(nanoid());
     const TitleChange = (e) => {
         setTitle(e.target.value);
     };
     const MemoChange = (e) => {
         setNote(e.target.value);
     };
-    const ClickHandler = (e) => {
+    const ClickHandler = () => {
         let NoteStorageItem = localStorage.getItem("Note");
         try {
             NoteStorageItem = NoteStorageItem ? JSON.parse(NoteStorageItem) :  [];
-            NoteStorageItem.push({ Title, Note });
+            NoteStorageItem.push({ id, Title, Note });
             localStorage.setItem("Note", JSON.stringify(NoteStorageItem));
         } catch (e) {
+            console.log(e);
             return [];
         }
         

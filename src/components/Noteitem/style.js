@@ -14,6 +14,7 @@ export const Container = styled.div`
     &::-webkit-scrollbar {
         display: none;
     }
+    position: relative;
 `;
 export const Title = styled.span`
     font-size: 20px;
@@ -24,4 +25,10 @@ export const Memo = styled.span`
     font-size: 16px;
     margin: 5px 30px 0 30px;
     word-break: break-all;
+`;
+export const DeleteBtn = styled.div`
+    cursor: pointer;
+    position: absolute;
+    right: 8%;
+    top: 8%;
 `;
