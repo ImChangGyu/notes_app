@@ -2,7 +2,7 @@
   "name": "notes-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ImChangGyu.github.io/notes_app",
+  "homepage": "http://imchanggyu.github.io/notes_app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
